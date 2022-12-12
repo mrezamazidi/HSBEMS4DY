@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+	<center>
+    <h2>Energy management system of HSB living lab</h2>
+	</center>
+	<meta http-equiv="refresh" content="1">
+</head>
+
+
+<style>
+table, th, td {
+  border:1px solid black;margin-left:auto;margin-right:auto;font-size: 20px;
+}
+</style>
+<body>
+
+<table style="width:50%">
+  <tr>
+    <th>Device</th>
+    <th>End time</th>
+    <th>Energy cost saving</th>
+  </tr>
+  <tr>
+    <th>Tumble dryer</th>
+
+    <th>
+		{% for message in get_flashed_messages(category_filter=["category1"]) %}
+             <p>{{ message }}</p>
+         {% endfor %}	
+	</th>
+    <th>
+		{% for message in get_flashed_messages(category_filter=["category2"]) %}
+             <p>{{ message }}</p>
+         {% endfor %}	
+	</th>
+	
+  </tr>
+  </tr>
+</table>
+
+</body>
+
+
+
+
+<body>
+    <style>
+		body {
+			background-image: url('https://i.ibb.co/3Tv07h5/HSBfig.png');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			}
+	</style>
+</body>
+</html>
