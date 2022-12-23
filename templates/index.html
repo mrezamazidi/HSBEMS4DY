@@ -22,6 +22,7 @@ table, th, td {
     <th>Device</th>
     <th>Expected start time</th>
     <th>Energy cost saving</th>
+    <th>State</th>
   </tr>
   <tr>
     <th>Tumble dryer</th>
@@ -36,7 +37,12 @@ table, th, td {
              <p>{{ message }}</p>
          {% endfor %}	
 	</th>
-	
+    <th>
+		{% for message in get_flashed_messages(category_filter=["category3"]) %}
+             <p>{{ message }}</p>
+         {% endfor %}	
+	</th>
+	  
   </tr>
   </tr>
 </table>
