@@ -13,7 +13,7 @@ app.secret_key = "manbearpig_MUDMAN888"
 
 best_time = 0
 energy_saving = 0
-
+end_flag = 0
 ###############################################################################
 #MQTT protocol for connecting to the washing machine
 broker = 'broker.mqttdashboard.com'
