@@ -4,62 +4,88 @@
 <head>
     <meta charset="UTF-8">
 	<center>
-		<p style="font-size: 40px"><b>Energy management system of HSB living lab</b></p>
+		<p style="margin:180px 40px 80px;font-size:25px;"> <b>HSB LIVING LAB ENERGY DATA VISULISATION</b></p>		
 	</center>
+	
+	<style>
+    .color-box-container {
+      display: flex;
+      justify-content: space-between;
+	  position: relative;
+    }
+
+    .color-box {
+	  display: flex;
+	  position: relative;
+	  border-radius: 15px;
+      width: 350px;
+      height: 100px;
+	  margin:40px 20px 50px;
+	  text-align: center;
+	  align-items: center;
+	  justify-content: center;
+    }
+
+    .blue {
+      background-color: #bbdefb;
+    }
+
+    .yellow {
+      background-color: #fcf3cf;
+    }
+
+    .green {
+      background-color: #d1f2eb;
+    }
+	
+	.red {
+      background-color: #f2d7d5;
+    }
+	
+	.color-box h1 {
+    position: absolute;
+    z-index: 1;
+    top: -60px;
+    left: 0;
+    right: 0;
+    color: grey;
+	}
+
+  </style>
+	
 	<meta http-equiv="refresh" content="5">
 </head>
 
 
-<style>
-table, th, td {
-  border:2px solid black;margin-left:auto;margin-right:auto;font-size: 35px;
-}
-</style>
 <body>
+  <div class="color-box-container">
+    <div class="color-box blue">
+	<h1> Device</h1>
+	<p style="font-size:30px;"> <b>Tumble dryer</b></p>
+	</div>
 
-<table style="width:80%">
-  <tr>
-    <th>Device</th>
-    <th>Start time</th>
-    <th>Cost saving</th>
-    <th>Status</th>
-  </tr>
-  <tr>
-    <th>Tumble dryer</th>
-
-    <th>
-		{% for message in get_flashed_messages(category_filter=["category1"]) %}
-             <p>{{ message }}</p>
-         {% endfor %}	
-	</th>
-    <th>
-		{% for message in get_flashed_messages(category_filter=["category2"]) %}
-             <p>{{ message }}</p>
-         {% endfor %}	
-	</th>
-    <th>
-		{% for message in get_flashed_messages(category_filter=["category3"]) %}
-             <p>{{ message }}</p>
-         {% endfor %}	
-	</th>
-	  
-  </tr>
-  </tr>
-</table>
+    <div class="color-box yellow">
+	<h1> Start time</h1>
+	{% for message in get_flashed_messages(category_filter=["category1"]) %}
+	<p style="font-size:30px;"> <b>{{ message }}</b></p>
+	{% endfor %}
+	</div>
+	
+	<div class="color-box green">
+	<h1> Cost saving</h1>
+	{% for message in get_flashed_messages(category_filter=["category2"]) %}
+	<p style="font-size:30px;"> <b>{{ message }}</b></p>
+	{% endfor %}
+	</div>
+	
+    <div class="color-box red">
+	<h1> Status</h1>
+	{% for message in get_flashed_messages(category_filter=["category3"]) %}
+	<p style="font-size:30px;"> <b>{{ message }}</b></p>
+	{% endfor %}
+	</div>
+  </div>
 
 </body>
 
-
-
-
-<body>
-    <style>
-		body {
-			background-image: url('https://i.ibb.co/3Tv07h5/HSBfig.png');
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: cover;
-			}
-	</style>
-</body>
 </html>
